@@ -24,6 +24,8 @@ public interface LoginContract {
     abstract class ILoginPresenter extends BasePresenter<ILoginView> {
 
         public abstract void onLogin(String userName, String userPsw);
+
+        public  abstract void onTest();
     }
 
 

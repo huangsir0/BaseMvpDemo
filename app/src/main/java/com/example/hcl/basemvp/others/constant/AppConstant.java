@@ -5,7 +5,12 @@ package com.example.hcl.basemvp.others.constant;
  */
 public class AppConstant {
 
-    public final class  Url{
-
+    public final class Url {
+        public static final String BaseUrl = "http://v.juhe.cn/";
     }
+
+    public final class LogTag {
+        public static final String Log_TAG = "hcl";
+    }
+
 }

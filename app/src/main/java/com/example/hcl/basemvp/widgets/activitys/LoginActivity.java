@@ -16,9 +16,6 @@ import butterknife.BindView;
 import butterknife.OnClick;
 
 public class LoginActivity extends BaseAppActivity<LoginPresenter> implements LoginContract.ILoginView {
-
-
-
     @BindView(R.id.edit_userName)
     EditText edit_userName;
     @BindView(R.id.edit_userPsw)
@@ -43,6 +40,7 @@ public class LoginActivity extends BaseAppActivity<LoginPresenter> implements Lo
         loading_smile.stopAnim();
     }
 
+
     /**
      * 布局ID
      *
@@ -60,6 +58,13 @@ public class LoginActivity extends BaseAppActivity<LoginPresenter> implements Lo
         String psw =edit_userPsw.getText().toString();
         mPresenter.onLogin(name,psw);
     }
+
+
+    @OnClick(R.id.btn_onTest)
+    void onTestClick(View view){
+        mPresenter.onTest();
+    }
+
 
     @Override
     public void loginFail(String errorMsg) {

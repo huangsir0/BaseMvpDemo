@@ -1,10 +1,11 @@
 package com.example.hcl.basemvp.models.inter;
 
 import com.example.hcl.basemvp.domains.LoginDomain;
-import com.example.hcl.basemvp.models.impls.LoginModel;
-import com.example.hcl.basemvp.others.exceptions.SelfException;
-import com.example.hcl.basemvp.others.inter.ICallBack;
+import com.example.hcl.basemvp.domains.NewsDomain;
 import com.example.hcl.basemvp.others.inter.ILoginCallBack;
+
+import io.reactivex.Observable;
+
 
 public interface ILoginModel {
 
@@ -14,4 +15,9 @@ public interface ILoginModel {
      * @param psw
      */
     void onLogin(String name, String psw, ILoginCallBack<LoginDomain,Exception> callBack);
+
+    /**
+     * Test
+     */
+     Observable<NewsDomain> onTest();
 }

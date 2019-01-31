@@ -29,6 +29,14 @@
         android:id="@+id/btn_userLogin"
         android:text="登录"
         />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_onTest"
+        android:text="Test"
+        />
+
     <com.example.hcl.basemvp.widgets.views.SmileLoadingView
         android:layout_width="match_parent"
         android:layout_height="60dp"
