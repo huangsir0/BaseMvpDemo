@@ -42,7 +42,7 @@ public class LoginPresenter extends LoginContract.ILoginPresenter {
                .subscribe(new DisposableObserver<NewsDomain>() {
                    @Override
                    public void onNext(NewsDomain newsDomain) {
-                       Log.i(AppConstant.LogTag.Log_TAG,newsDomain.toString());
+                       Log.i(AppConstant.Log.Log_TAG,newsDomain.toString());
                    }
 
                    @Override

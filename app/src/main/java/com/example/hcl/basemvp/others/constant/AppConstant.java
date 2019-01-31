@@ -9,7 +9,7 @@ public class AppConstant {
         public static final String BaseUrl = "http://v.juhe.cn/";
     }
 
-    public final class LogTag {
+    public final class Log {
         public static final String Log_TAG = "hcl";
     }
 
