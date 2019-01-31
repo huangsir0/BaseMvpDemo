@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".widgets.activitys.LoginActivity">
+
+    <EditText
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:hint="请输入用户名"
+        android:inputType="text"
+        android:id="@+id/edit_userName"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:layout_marginTop="10dp"
+        android:hint="请输入密码"
+        android:inputType="number"
+        android:id="@+id/edit_userPsw"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_userLogin"
+        android:text="登录"
+        />
+    <com.example.hcl.basemvp.widgets.views.SmileLoadingView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id="@+id/loading_smile"
+        />
+</LinearLayout>
