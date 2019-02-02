@@ -6,11 +6,15 @@ import android.widget.Toast;
 import com.example.hcl.basemvp.IBasePresenter;
 import com.example.hcl.basemvp.IBaseView;
 
+import javax.inject.Inject;
+
 /**
  * @param <P>
  */
 public abstract class BaseAppActivity<P extends IBasePresenter> extends BaseActivity implements IBaseView {
 
+
+    @Inject
     protected P mPresenter;
 
     @Override
@@ -34,14 +38,11 @@ public abstract class BaseAppActivity<P extends IBasePresenter> extends BaseActi
      */
     @Override
     protected void init() {
-        mPresenter = bindPresenter();
         if (null != mPresenter) {
             mPresenter.attachView(this);
         }
 
     }
-
-
 
 
     /**
@@ -51,10 +52,9 @@ public abstract class BaseAppActivity<P extends IBasePresenter> extends BaseActi
     protected void onDestroy() {
         super.onDestroy();
         if (null != mPresenter) {
-            mPresenter.detachView();
+            mPresenter.onDestory();
+            mPresenter=null;
         }
     }
-
-    protected abstract P bindPresenter();
 
 }

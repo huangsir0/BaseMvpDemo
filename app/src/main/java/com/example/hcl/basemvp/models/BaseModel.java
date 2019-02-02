@@ -1,18 +1,26 @@
 package com.example.hcl.basemvp.models;
-
+import com.example.hcl.basemvp.BaseApp;
+import com.example.hcl.basemvp.annotions.ActivityScope;
+import com.example.hcl.basemvp.models.inter.IBaseModel;
 import com.example.hcl.basemvp.others.net.Api;
-import com.example.hcl.basemvp.others.utils.HttpUtils;
+import com.example.hcl.basemvp.others.utils.AppManager;
+import com.example.hcl.basemvp.daggers.moudles.HttpMoudle;
 
-public class BaseModel {
+import javax.inject.Inject;
 
-    protected HttpUtils retrofit = HttpUtils.Instance();
 
+public class BaseModel implements IBaseModel {
+
+
+    @Inject
+    BaseApp baseApp;
 
     /**
-     * 网络请求
-     * @return
+     * 构造
      */
-    protected Api getApi() {
-        return retrofit.createApi(Api.class);
+    public  BaseModel(){
+
     }
+
+
 }

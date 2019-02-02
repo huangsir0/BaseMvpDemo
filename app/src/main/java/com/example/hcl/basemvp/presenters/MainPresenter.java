@@ -1,7 +1,15 @@
 package com.example.hcl.basemvp.presenters;
 
+import com.example.hcl.basemvp.BasePresenter;
 import com.example.hcl.basemvp.constract.MainContract;
 
-public class MainPresenter extends MainContract.IMainPresenter {
+import javax.inject.Inject;
 
+public class MainPresenter extends BasePresenter<MainContract.IMainModel,MainContract.IMainView> {
+
+
+    @Inject
+    public MainPresenter(MainContract.IMainModel model, MainContract.IMainView view) {
+        super(model, view);
+    }
 }

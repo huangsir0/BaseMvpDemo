@@ -1,15 +1,28 @@
 package com.example.hcl.basemvp.models.impls;
-
+import com.example.hcl.basemvp.annotions.ActivityScope;
+import com.example.hcl.basemvp.constract.LoginContract;
 import com.example.hcl.basemvp.domains.LoginDomain;
 import com.example.hcl.basemvp.domains.NewsDomain;
 import com.example.hcl.basemvp.models.BaseModel;
-import com.example.hcl.basemvp.models.inter.ILoginModel;
 import com.example.hcl.basemvp.others.inter.ILoginCallBack;
+import com.example.hcl.basemvp.others.net.Api;
 
+import javax.inject.Inject;
 import io.reactivex.Observable;
 
+@ActivityScope
+public class LoginModel extends BaseModel implements LoginContract.ILoginModel {
 
-public class LoginModel extends BaseModel implements ILoginModel {
+    @Inject
+    Api netService;
+
+    /**
+     * 构造
+     */
+    @Inject
+    public LoginModel(){
+
+    }
 
 
     @Override
@@ -31,7 +44,7 @@ public class LoginModel extends BaseModel implements ILoginModel {
 
     @Override
     public Observable<NewsDomain> onTest() {
-        return getApi().getNews("top", "dc4fed8fb5fb46ac78e51d66306e6762");
+        return netService.getNews("top", "dc4fed8fb5fb46ac78e51d66306e6762");
     }
 
 

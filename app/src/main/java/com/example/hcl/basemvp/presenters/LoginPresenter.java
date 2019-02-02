@@ -2,26 +2,40 @@ package com.example.hcl.basemvp.presenters;
 
 import android.util.Log;
 
+import com.example.hcl.basemvp.BaseApp;
+import com.example.hcl.basemvp.BasePresenter;
 import com.example.hcl.basemvp.constract.LoginContract;
 import com.example.hcl.basemvp.domains.LoginDomain;
 import com.example.hcl.basemvp.domains.NewsDomain;
-import com.example.hcl.basemvp.models.impls.LoginModel;
 import com.example.hcl.basemvp.others.constant.AppConstant;
-import com.example.hcl.basemvp.others.inter.ICallBack;
 import com.example.hcl.basemvp.others.inter.ILoginCallBack;
+import com.example.hcl.basemvp.others.net.Api;
+import com.example.hcl.basemvp.others.utils.AppManager;
 
+import javax.inject.Inject;
 import io.reactivex.Observable;
-import io.reactivex.Scheduler;
 import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.internal.observers.DisposableLambdaObserver;
 import io.reactivex.observers.DisposableObserver;
 import io.reactivex.schedulers.Schedulers;
 
 
-public class LoginPresenter extends LoginContract.ILoginPresenter {
+public class LoginPresenter extends BasePresenter<LoginContract.ILoginModel,LoginContract.ILoginView> {
 
-    //登录Model
-    private LoginModel loginModel = new LoginModel();
+
+    @Inject
+    Api netApi;
+
+    @Inject
+    AppManager appManager;
+
+    @Inject
+    BaseApp baseApp;
+
+
+    @Inject
+    public LoginPresenter(LoginContract.ILoginModel model, LoginContract.ILoginView view) {
+        super(model, view);
+    }
 
     /**
      * 去登录
@@ -29,14 +43,13 @@ public class LoginPresenter extends LoginContract.ILoginPresenter {
      * @param userName
      * @param userPsw
      */
-    @Override
     public void onLogin(String userName, String userPsw) {
-        loginModel.onLogin(userName, userPsw, new LoginCallBack());
+        this.mModel.onLogin(userName, userPsw, new LoginCallBack());
     }
 
-    @Override
+
     public void onTest() {
-       Observable<NewsDomain> newsDomainObservable= loginModel.onTest();
+       Observable<NewsDomain> newsDomainObservable= this.mModel.onTest();
        newsDomainObservable.subscribeOn(Schedulers.io())
                .observeOn(AndroidSchedulers.mainThread())
                .subscribe(new DisposableObserver<NewsDomain>() {

@@ -1,9 +1,10 @@
 package com.example.hcl.basemvp.widgets.activitys;
 
-import android.view.View;
+
 
 import com.example.hcl.basemvp.R;
 import com.example.hcl.basemvp.constract.MainContract;
+import com.example.hcl.basemvp.daggers.components.AppComponent;
 import com.example.hcl.basemvp.presenters.MainPresenter;
 import com.example.hcl.basemvp.widgets.activitys.base.BaseAppActivity;
 
@@ -11,11 +12,9 @@ public class MainActivity extends BaseAppActivity<MainPresenter> implements Main
 
 
     @Override
-    protected MainPresenter bindPresenter() {
-        return new MainPresenter();
+    protected void setupActivityCommponent(AppComponent appComponent) {
+
     }
-
-
 
     @Override
     protected int getLayoutID() {

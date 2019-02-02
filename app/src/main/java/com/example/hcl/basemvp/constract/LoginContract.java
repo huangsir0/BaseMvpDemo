@@ -1,12 +1,17 @@
 package com.example.hcl.basemvp.constract;
-
-import com.example.hcl.basemvp.BasePresenter;
 import com.example.hcl.basemvp.IBaseView;
+import com.example.hcl.basemvp.domains.LoginDomain;
+import com.example.hcl.basemvp.domains.NewsDomain;
+import com.example.hcl.basemvp.models.inter.IBaseModel;
+import com.example.hcl.basemvp.others.inter.ILoginCallBack;
+
+import io.reactivex.Observable;
 
 /**
  * Login 契约接口
  */
 public interface LoginContract {
+
     interface ILoginView extends IBaseView {
         /**
          * 登录失败
@@ -21,12 +26,18 @@ public interface LoginContract {
         void loginSuccess(String successMsg);
     }
 
-    abstract class ILoginPresenter extends BasePresenter<ILoginView> {
+    interface ILoginModel extends IBaseModel {
 
-        public abstract void onLogin(String userName, String userPsw);
+        /**
+         * 登录接口
+         * @param name
+         * @param psw
+         */
+        void onLogin(String name, String psw, ILoginCallBack<LoginDomain,Exception> callBack);
 
-        public  abstract void onTest();
+        /**
+         * Test
+         */
+        Observable<NewsDomain> onTest();
     }
-
-
 }
