@@ -1,10 +1,8 @@
-package com.example.hcl.basemvp;
+package com.example.hcl.basemvp.mvp;
 
-import com.example.hcl.basemvp.models.inter.IBaseModel;
+import com.example.hcl.basemvp.mvp.models.inter.IBaseModel;
 
 import javax.inject.Inject;
-
-import io.reactivex.annotations.Nullable;
 
 public class BasePresenter<M extends IBaseModel, V extends IBaseView> implements IBasePresenter {
 

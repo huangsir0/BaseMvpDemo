@@ -1,8 +1,8 @@
-package com.example.hcl.basemvp.constract;
-import com.example.hcl.basemvp.IBaseView;
+package com.example.hcl.basemvp.mvp.constract;
+import com.example.hcl.basemvp.mvp.IBaseView;
 import com.example.hcl.basemvp.domains.LoginDomain;
 import com.example.hcl.basemvp.domains.NewsDomain;
-import com.example.hcl.basemvp.models.inter.IBaseModel;
+import com.example.hcl.basemvp.mvp.models.inter.IBaseModel;
 import com.example.hcl.basemvp.others.inter.ILoginCallBack;
 
 import io.reactivex.Observable;

@@ -2,11 +2,8 @@ package com.example.hcl.basemvp.daggers.moudles;
 
 
 import com.example.hcl.basemvp.annotions.ActivityScope;
-import com.example.hcl.basemvp.constract.LoginContract;
-import com.example.hcl.basemvp.models.impls.LoginModel;
-import com.example.hcl.basemvp.presenters.LoginPresenter;
-
-import javax.inject.Singleton;
+import com.example.hcl.basemvp.mvp.constract.LoginContract;
+import com.example.hcl.basemvp.mvp.models.impls.LoginModel;
 
 import dagger.Module;
 import dagger.Provides;

@@ -4,7 +4,6 @@ package com.example.hcl.basemvp.daggers.components;
 import com.example.hcl.basemvp.BaseApp;
 import com.example.hcl.basemvp.daggers.moudles.ApiServiceMoudle;
 import com.example.hcl.basemvp.daggers.moudles.AppMoudle;
-import com.example.hcl.basemvp.models.BaseModel;
 import com.example.hcl.basemvp.others.net.Api;
 import com.example.hcl.basemvp.others.utils.AppManager;
 import com.example.hcl.basemvp.daggers.moudles.HttpMoudle;

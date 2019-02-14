@@ -1,11 +1,10 @@
-package com.example.hcl.basemvp.models.impls;
+package com.example.hcl.basemvp.mvp.models.impls;
 import com.example.hcl.basemvp.annotions.ActivityScope;
-import com.example.hcl.basemvp.constract.LoginContract;
+import com.example.hcl.basemvp.mvp.constract.LoginContract;
 import com.example.hcl.basemvp.domains.LoginDomain;
 import com.example.hcl.basemvp.domains.NewsDomain;
-import com.example.hcl.basemvp.models.BaseModel;
+import com.example.hcl.basemvp.mvp.models.BaseModel;
 import com.example.hcl.basemvp.others.inter.ILoginCallBack;
-import com.example.hcl.basemvp.others.net.Api;
 
 import javax.inject.Inject;
 import io.reactivex.Observable;

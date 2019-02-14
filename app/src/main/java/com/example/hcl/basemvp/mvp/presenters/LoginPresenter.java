@@ -1,17 +1,14 @@
-package com.example.hcl.basemvp.presenters;
+package com.example.hcl.basemvp.mvp.presenters;
 
 import android.util.Log;
 
-import com.example.hcl.basemvp.BaseApp;
-import com.example.hcl.basemvp.BasePresenter;
-import com.example.hcl.basemvp.annotions.ActivityScope;
-import com.example.hcl.basemvp.constract.LoginContract;
+import com.example.hcl.basemvp.mvp.BasePresenter;
+import com.example.hcl.basemvp.mvp.constract.LoginContract;
 import com.example.hcl.basemvp.domains.LoginDomain;
 import com.example.hcl.basemvp.domains.NewsDomain;
 import com.example.hcl.basemvp.others.constant.AppConstant;
 import com.example.hcl.basemvp.others.inter.ILoginCallBack;
-import com.example.hcl.basemvp.others.net.Api;
-import com.example.hcl.basemvp.others.utils.AppManager;
+
 import javax.inject.Inject;
 import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;

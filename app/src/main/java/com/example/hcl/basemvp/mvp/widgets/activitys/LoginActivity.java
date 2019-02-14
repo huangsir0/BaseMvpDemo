@@ -5,13 +5,12 @@ import android.graphics.Color;
 import android.view.View;
 import android.widget.EditText;
 
-import com.example.hcl.basemvp.BaseApp;
 import com.example.hcl.basemvp.R;
-import com.example.hcl.basemvp.constract.LoginContract;
+import com.example.hcl.basemvp.mvp.constract.LoginContract;
 import com.example.hcl.basemvp.daggers.components.AppComponent;
 import com.example.hcl.basemvp.daggers.components.DaggerLoginComponent;
 import com.example.hcl.basemvp.daggers.moudles.LoginMoudle;
-import com.example.hcl.basemvp.presenters.LoginPresenter;
+import com.example.hcl.basemvp.mvp.presenters.LoginPresenter;
 import com.example.hcl.basemvp.widgets.activitys.base.BaseAppActivity;
 import com.example.hcl.basemvp.widgets.views.SmileLoadingView;
 

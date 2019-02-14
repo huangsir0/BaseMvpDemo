@@ -1,7 +1,7 @@
-package com.example.hcl.basemvp.presenters;
+package com.example.hcl.basemvp.mvp.presenters;
 
-import com.example.hcl.basemvp.BasePresenter;
-import com.example.hcl.basemvp.constract.MainContract;
+import com.example.hcl.basemvp.mvp.BasePresenter;
+import com.example.hcl.basemvp.mvp.constract.MainContract;
 
 import javax.inject.Inject;
 

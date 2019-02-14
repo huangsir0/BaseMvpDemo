@@ -1,11 +1,8 @@
-package com.example.hcl.basemvp.models;
+package com.example.hcl.basemvp.mvp.models;
 
 import com.example.hcl.basemvp.BaseApp;
-import com.example.hcl.basemvp.annotions.ActivityScope;
-import com.example.hcl.basemvp.models.inter.IBaseModel;
+import com.example.hcl.basemvp.mvp.models.inter.IBaseModel;
 import com.example.hcl.basemvp.others.net.Api;
-import com.example.hcl.basemvp.others.utils.AppManager;
-import com.example.hcl.basemvp.daggers.moudles.HttpMoudle;
 
 import javax.inject.Inject;
 
