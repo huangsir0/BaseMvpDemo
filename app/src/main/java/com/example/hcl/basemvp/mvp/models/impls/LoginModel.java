@@ -5,7 +5,6 @@ import com.example.hcl.basemvp.domains.LoginDomain;
 import com.example.hcl.basemvp.domains.NewsDomain;
 import com.example.hcl.basemvp.mvp.models.BaseModel;
 import com.example.hcl.basemvp.others.inter.ILoginCallBack;
-
 import javax.inject.Inject;
 import io.reactivex.Observable;
 

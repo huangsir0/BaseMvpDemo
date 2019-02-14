@@ -1,4 +1,4 @@
-package com.example.hcl.basemvp.widgets.views;
+package com.example.hcl.basemvp.mvp.widgets.views;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;

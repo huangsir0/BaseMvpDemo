@@ -1,5 +1,4 @@
-package com.example.hcl.basemvp.widgets.activitys;
-
+package com.example.hcl.basemvp.mvp.widgets.activitys;
 import android.content.Intent;
 import android.graphics.Color;
 import android.view.View;
@@ -11,8 +10,10 @@ import com.example.hcl.basemvp.daggers.components.AppComponent;
 import com.example.hcl.basemvp.daggers.components.DaggerLoginComponent;
 import com.example.hcl.basemvp.daggers.moudles.LoginMoudle;
 import com.example.hcl.basemvp.mvp.presenters.LoginPresenter;
-import com.example.hcl.basemvp.widgets.activitys.base.BaseAppActivity;
-import com.example.hcl.basemvp.widgets.views.SmileLoadingView;
+
+import com.example.hcl.basemvp.mvp.widgets.activitys.base.BaseAppActivity;
+import com.example.hcl.basemvp.mvp.widgets.views.SmileLoadingView;
+
 
 import butterknife.BindView;
 import butterknife.OnClick;
