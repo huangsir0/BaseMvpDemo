@@ -12,24 +12,10 @@ public class BasePresenter<M extends IBaseModel, V extends IBaseView> implements
     protected V mView;
 
     @Inject
-    @Nullable
     protected M mModel;
 
+    public BasePresenter(){
 
-    /**
-     * 构造
-     * @param model
-     * @param view
-     */
-    @Inject
-    public BasePresenter(M model,V view){
-        this.mModel=model;
-        this.mView=view;
-    }
-
-
-    public  BasePresenter(V view){
-        this.mView=view;
     }
 
 
@@ -39,10 +25,6 @@ public class BasePresenter<M extends IBaseModel, V extends IBaseView> implements
 
     }
 
-    @Override
-    public void attachView(IBaseView view) {
-        this.mView= (V) view;
-    }
 
     @Override
     public void onDestory() {

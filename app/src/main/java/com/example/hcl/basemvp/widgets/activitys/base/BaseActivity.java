@@ -2,13 +2,8 @@ package com.example.hcl.basemvp.widgets.activitys.base;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-
 import com.example.hcl.basemvp.BaseApp;
 import com.example.hcl.basemvp.daggers.components.AppComponent;
-
-import javax.inject.Inject;
-
 import butterknife.ButterKnife;
 
 public abstract class BaseActivity extends AppCompatActivity {
@@ -20,11 +15,10 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //初始化Dagger
-        BaseApp baseApp= (BaseApp) getApplication();
-        setupActivityCommponent(baseApp.getAppComponent());
         setContentView(getLayoutID());
         ButterKnife.bind(this);
-
+        BaseApp baseApp= (BaseApp) getApplication();
+        setupActivityCommponent(baseApp.getAppComponent());
         init();
     }
 

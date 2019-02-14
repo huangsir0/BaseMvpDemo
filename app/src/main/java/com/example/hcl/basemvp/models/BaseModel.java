@@ -1,4 +1,5 @@
 package com.example.hcl.basemvp.models;
+
 import com.example.hcl.basemvp.BaseApp;
 import com.example.hcl.basemvp.annotions.ActivityScope;
 import com.example.hcl.basemvp.models.inter.IBaseModel;
@@ -13,12 +14,15 @@ public class BaseModel implements IBaseModel {
 
 
     @Inject
-    BaseApp baseApp;
+    protected BaseApp baseApp;
+
+    @Inject
+    protected Api netService;
 
     /**
      * 构造
      */
-    public  BaseModel(){
+    public BaseModel() {
 
     }
 

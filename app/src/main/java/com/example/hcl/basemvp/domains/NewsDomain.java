@@ -22,8 +22,8 @@ public class NewsDomain {
                 '}';
     }
 
-    public NewsDomain(String reason) {
 
+    public NewsDomain(String reason) {
         this.reason = reason;
     }
 }

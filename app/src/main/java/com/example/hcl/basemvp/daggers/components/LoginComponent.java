@@ -5,7 +5,6 @@ package com.example.hcl.basemvp.daggers.components;
 import com.example.hcl.basemvp.annotions.ActivityScope;
 import com.example.hcl.basemvp.daggers.moudles.LoginMoudle;
 import com.example.hcl.basemvp.widgets.activitys.LoginActivity;
-
 import dagger.Component;
 
 @ActivityScope
@@ -18,9 +17,7 @@ public interface LoginComponent {
      *
      * @param activity
      */
-
     void inject(LoginActivity activity);
-
 
 
 }

@@ -13,8 +13,7 @@ import io.reactivex.Observable;
 @ActivityScope
 public class LoginModel extends BaseModel implements LoginContract.ILoginModel {
 
-    @Inject
-    Api netService;
+
 
     /**
      * 构造

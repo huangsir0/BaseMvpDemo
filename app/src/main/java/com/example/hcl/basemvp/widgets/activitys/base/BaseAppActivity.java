@@ -1,6 +1,4 @@
 package com.example.hcl.basemvp.widgets.activitys.base;
-
-import android.view.View;
 import android.widget.Toast;
 
 import com.example.hcl.basemvp.IBasePresenter;
@@ -12,6 +10,7 @@ import javax.inject.Inject;
  * @param <P>
  */
 public abstract class BaseAppActivity<P extends IBasePresenter> extends BaseActivity implements IBaseView {
+
 
 
     @Inject
@@ -38,9 +37,6 @@ public abstract class BaseAppActivity<P extends IBasePresenter> extends BaseActi
      */
     @Override
     protected void init() {
-        if (null != mPresenter) {
-            mPresenter.attachView(this);
-        }
 
     }
 

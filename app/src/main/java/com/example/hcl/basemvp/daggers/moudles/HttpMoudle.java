@@ -1,6 +1,7 @@
 package com.example.hcl.basemvp.daggers.moudles;
 
 import com.example.hcl.basemvp.others.constant.AppConstant;
+import com.example.hcl.basemvp.others.net.Api;
 
 import java.util.concurrent.TimeUnit;
 import javax.inject.Singleton;
@@ -58,6 +59,7 @@ public class HttpMoudle {
         builder.addInterceptor(logInterceptor);
         return builder.build();
     }
+
 
 
 }

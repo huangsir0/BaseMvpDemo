@@ -1,9 +1,13 @@
 package com.example.hcl.basemvp.daggers.moudles;
 
 
+import com.example.hcl.basemvp.annotions.ActivityScope;
 import com.example.hcl.basemvp.constract.LoginContract;
 import com.example.hcl.basemvp.models.impls.LoginModel;
 import com.example.hcl.basemvp.presenters.LoginPresenter;
+
+import javax.inject.Singleton;
+
 import dagger.Module;
 import dagger.Provides;
 
@@ -18,11 +22,18 @@ public class LoginMoudle {
     }
 
 
-
+    @ActivityScope
     @Provides
-    public LoginPresenter provideLoginPresenter(){
-        return  new LoginPresenter(new LoginModel(),this.loginView);
+    public LoginContract.ILoginView provideLoginView(){
+      return this.loginView;
     }
+
+    @ActivityScope
+    @Provides
+    public LoginContract.ILoginModel provideLoginModel(LoginModel loginModel){
+        return loginModel;
+    }
+
 
 
 

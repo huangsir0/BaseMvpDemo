@@ -4,6 +4,7 @@ import android.util.Log;
 
 import com.example.hcl.basemvp.BaseApp;
 import com.example.hcl.basemvp.BasePresenter;
+import com.example.hcl.basemvp.annotions.ActivityScope;
 import com.example.hcl.basemvp.constract.LoginContract;
 import com.example.hcl.basemvp.domains.LoginDomain;
 import com.example.hcl.basemvp.domains.NewsDomain;
@@ -11,7 +12,6 @@ import com.example.hcl.basemvp.others.constant.AppConstant;
 import com.example.hcl.basemvp.others.inter.ILoginCallBack;
 import com.example.hcl.basemvp.others.net.Api;
 import com.example.hcl.basemvp.others.utils.AppManager;
-
 import javax.inject.Inject;
 import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -22,20 +22,17 @@ import io.reactivex.schedulers.Schedulers;
 public class LoginPresenter extends BasePresenter<LoginContract.ILoginModel,LoginContract.ILoginView> {
 
 
-    @Inject
-    Api netApi;
 
-    @Inject
-    AppManager appManager;
 
-    @Inject
-    BaseApp baseApp;
+
 
 
     @Inject
-    public LoginPresenter(LoginContract.ILoginModel model, LoginContract.ILoginView view) {
-        super(model, view);
+    public LoginPresenter() {
+
     }
+
+
 
     /**
      * 去登录

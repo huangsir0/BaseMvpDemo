@@ -9,7 +9,6 @@ public interface IBasePresenter<V extends IBaseView> {
 
     void onCreate();
 
-    void attachView(V view);
 
     void onDestory();
 

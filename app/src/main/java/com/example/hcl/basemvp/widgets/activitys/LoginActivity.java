@@ -11,13 +11,9 @@ import com.example.hcl.basemvp.constract.LoginContract;
 import com.example.hcl.basemvp.daggers.components.AppComponent;
 import com.example.hcl.basemvp.daggers.components.DaggerLoginComponent;
 import com.example.hcl.basemvp.daggers.moudles.LoginMoudle;
-import com.example.hcl.basemvp.others.net.Api;
-import com.example.hcl.basemvp.others.utils.AppManager;
 import com.example.hcl.basemvp.presenters.LoginPresenter;
 import com.example.hcl.basemvp.widgets.activitys.base.BaseAppActivity;
 import com.example.hcl.basemvp.widgets.views.SmileLoadingView;
-
-import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -27,7 +23,6 @@ public class LoginActivity extends BaseAppActivity<LoginPresenter> implements Lo
     EditText edit_userName;
     @BindView(R.id.edit_userPsw)
     EditText edit_userPsw;
-
     @BindView(R.id.loading_smile)
     SmileLoadingView loading_smile;
 
@@ -35,12 +30,9 @@ public class LoginActivity extends BaseAppActivity<LoginPresenter> implements Lo
 
     @Override
     protected void setupActivityCommponent(AppComponent appComponent) {
-        DaggerLoginComponent.builder()
-                .appComponent(appComponent)
+        DaggerLoginComponent.builder().appComponent(appComponent)
                 .loginMoudle(new LoginMoudle(this))
-                .build()
-                .inject(this);
-
+                .build().inject(this);
     }
 
 

@@ -9,7 +9,8 @@ public class MainPresenter extends BasePresenter<MainContract.IMainModel,MainCon
 
 
     @Inject
-    public MainPresenter(MainContract.IMainModel model, MainContract.IMainView view) {
-        super(model, view);
+    public MainPresenter() {
+
     }
+
 }
