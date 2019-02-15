@@ -1,4 +1,4 @@
-package com.example.hcl.basemvp.widgets.fragments.base;
+package com.example.hcl.basemvp.mvp.widgets.fragments.base;
 
 
 import android.os.Bundle;
