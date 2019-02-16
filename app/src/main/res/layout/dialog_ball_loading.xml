@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <FrameLayout
+        xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/loading_layout"
+        android:background="@color/hint_foreground_holo_dark"
+        android:layout_gravity="center"
+        android:layout_height="match_parent">
+        <com.example.hcl.basemvp.mvp.widgets.views.BallsLoadingView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:ballRadius="6dp"
+            android:id="@+id/loading_ball"
+            app:animType="scale"
+            android:layout_gravity="center"
+            app:firstBallColor="@color/holo_orange_1"
+            app:secondBallColor="@color/holo_orange_2"
+            app:thirdBallColor="@color/holo_orange_3"
+            app:fourthBallColor="@color/holo_orange_4"/>
+</FrameLayout>

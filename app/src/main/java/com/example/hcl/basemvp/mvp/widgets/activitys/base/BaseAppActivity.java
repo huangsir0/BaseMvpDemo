@@ -4,7 +4,7 @@ import android.widget.Toast;
 
 import com.example.hcl.basemvp.mvp.IBasePresenter;
 import com.example.hcl.basemvp.mvp.IBaseView;
-import com.example.hcl.basemvp.widgets.activitys.base.BaseActivity;
+
 
 import javax.inject.Inject;
 

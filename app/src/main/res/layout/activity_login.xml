@@ -1,45 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".widgets.activitys.LoginActivity">
 
-    <EditText
-        android:layout_marginTop="10dp"
-        android:layout_width="match_parent"
-        android:hint="请输入用户名"
-        android:inputType="text"
-        android:id="@+id/edit_userName"
-        android:layout_height="wrap_content" />
+    tools:context=".mvp.widgets.activitys.LoginActivity">
 
-    <EditText
-        android:layout_marginTop="10dp"
-        android:hint="请输入密码"
-        android:inputType="number"
-        android:id="@+id/edit_userPsw"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="match_parent">
+        <EditText
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:hint="请输入用户名"
+            android:inputType="text"
+            android:id="@+id/edit_userName"
+            android:layout_height="wrap_content" />
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/btn_userLogin"
-        android:text="登录"
-        />
+        <EditText
+            android:layout_marginTop="10dp"
+            android:hint="请输入密码"
+            android:inputType="number"
+            android:id="@+id/edit_userPsw"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/btn_onTest"
-        android:text="Test"
-        />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_userLogin"
+            android:text="登录"
+            />
 
-    <com.example.hcl.basemvp.widgets.views.SmileLoadingView
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_onTest"
+            android:text="Test"
+            />
+
+    </LinearLayout>
+
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:id="@+id/loading_smile"
-        />
-</LinearLayout>
+        android:id="@+id/loading_layout"
+        android:visibility="gone"
+        android:layout_gravity="center"
+        android:layout_height="match_parent">
+      <com.example.hcl.basemvp.mvp.widgets.views.BallsLoadingView
+          android:layout_width="100dp"
+          android:layout_height="40dp"
+          app:ballRadius="6dp"
+          android:id="@+id/loading_ball"
+          app:animType="scale"
+          android:layout_gravity="center"
+          app:firstBallColor="@color/holo_orange_1"
+          app:secondBallColor="@color/holo_orange_2"
+          app:thirdBallColor="@color/holo_orange_3"
+          app:fourthBallColor="@color/holo_orange_4"/>
+    </FrameLayout>
+
+</FrameLayout>

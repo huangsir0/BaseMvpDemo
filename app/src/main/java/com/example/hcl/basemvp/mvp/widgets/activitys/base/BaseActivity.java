@@ -1,4 +1,4 @@
-package com.example.hcl.basemvp.widgets.activitys.base;
+package com.example.hcl.basemvp.mvp.widgets.activitys.base;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -31,7 +31,6 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     /**
      * 布局ID
-     *
      * @return
      */
     protected abstract int getLayoutID();

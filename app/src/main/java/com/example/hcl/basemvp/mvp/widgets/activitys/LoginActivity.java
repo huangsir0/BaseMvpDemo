@@ -1,8 +1,11 @@
 package com.example.hcl.basemvp.mvp.widgets.activitys;
+import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 
 import com.example.hcl.basemvp.R;
 import com.example.hcl.basemvp.mvp.constract.LoginContract;
@@ -10,10 +13,8 @@ import com.example.hcl.basemvp.daggers.components.AppComponent;
 import com.example.hcl.basemvp.daggers.components.DaggerLoginComponent;
 import com.example.hcl.basemvp.daggers.moudles.LoginMoudle;
 import com.example.hcl.basemvp.mvp.presenters.LoginPresenter;
-
 import com.example.hcl.basemvp.mvp.widgets.activitys.base.BaseAppActivity;
-import com.example.hcl.basemvp.mvp.widgets.views.SmileLoadingView;
-
+import com.example.hcl.basemvp.mvp.widgets.views.BallsLoadingView;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -23,8 +24,13 @@ public class LoginActivity extends BaseAppActivity<LoginPresenter> implements Lo
     EditText edit_userName;
     @BindView(R.id.edit_userPsw)
     EditText edit_userPsw;
-    @BindView(R.id.loading_smile)
-    SmileLoadingView loading_smile;
+
+    @BindView(R.id.loading_layout)
+    FrameLayout loadingLayout;
+
+    @BindView(R.id.loading_ball)
+    BallsLoadingView loading_view;
+
 
 
 
@@ -39,15 +45,18 @@ public class LoginActivity extends BaseAppActivity<LoginPresenter> implements Lo
 
     @Override
     public void showLoading() {
-        loading_smile.setViewColor(Color.RED);
-        loading_smile.startAnim();
+        loadingLayout.setVisibility(View.VISIBLE);
     }
 
 
+    @Override
+    protected void init() {
+        super.init();
+    }
 
     @Override
     public void hideLoading() {
-        loading_smile.stopAnim();
+       loadingLayout.setVisibility(View.GONE);
     }
 
 
@@ -81,6 +90,7 @@ public class LoginActivity extends BaseAppActivity<LoginPresenter> implements Lo
     @Override
     public void loginFail(String errorMsg) {
         showToast(errorMsg);
+        loadingLayout.setVisibility(View.GONE);
     }
 
     @Override
