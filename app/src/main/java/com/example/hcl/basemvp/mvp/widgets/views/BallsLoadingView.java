@@ -282,6 +282,9 @@ public class BallsLoadingView extends View {
     }
 
 
+
+
+
     public void setmAnimType(int animType){
         if (animType != ANIM_TYPE_SCALE
                 && animType != ANIM_TYPE_TRANSLATE){

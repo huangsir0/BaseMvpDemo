@@ -25,9 +25,7 @@ public class BaseApp extends Application {
                 .apiServiceMoudle(new ApiServiceMoudle())
                 .httpMoudle(new HttpMoudle())
                 .build();
-
     }
-
 
     public AppComponent getAppComponent(){
         return this.appComponent;

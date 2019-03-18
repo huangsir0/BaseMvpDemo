@@ -1,11 +1,8 @@
 package com.example.hcl.basemvp.mvp.widgets.activitys.base;
 
 import android.widget.Toast;
-
 import com.example.hcl.basemvp.mvp.IBasePresenter;
 import com.example.hcl.basemvp.mvp.IBaseView;
-
-
 import javax.inject.Inject;
 
 /**

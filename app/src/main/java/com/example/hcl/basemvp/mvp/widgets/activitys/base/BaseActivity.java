@@ -1,5 +1,4 @@
 package com.example.hcl.basemvp.mvp.widgets.activitys.base;
-
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import com.example.hcl.basemvp.BaseApp;
@@ -7,9 +6,6 @@ import com.example.hcl.basemvp.daggers.components.AppComponent;
 import butterknife.ButterKnife;
 
 public abstract class BaseActivity extends AppCompatActivity {
-
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

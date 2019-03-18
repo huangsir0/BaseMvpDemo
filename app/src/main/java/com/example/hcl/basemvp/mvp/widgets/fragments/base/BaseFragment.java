@@ -27,7 +27,6 @@ public abstract class BaseFragment<P extends BasePresenter> extends Fragment imp
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         rootView =initView(inflater,container,savedInstanceState);
-
         ButterKnife.bind(this,rootView);
         return  rootView;
         //return inflater.inflate(R.layout.fragment_base, container, false);
