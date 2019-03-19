@@ -262,5 +262,7 @@ public class MainActivity extends BaseAppActivity<MainPresenter> implements Main
         HDialogsManager.getInstance().requestShow(new DialogWrapper(builder1));
         //添加第二个Dialog
         HDialogsManager.getInstance().requestShow(new DialogWrapper(builder2));
+
+
     }
 }
