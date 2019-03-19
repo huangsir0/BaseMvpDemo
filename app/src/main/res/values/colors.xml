@@ -15,5 +15,11 @@
     <color name="holo_orange_3">#ddffbb33</color>
     <!-- A dark Holo shade of orange. Equivalent to ffff8800. -->
     <color name="holo_orange_4">#ffff8800</color>
+    <color name="white">#ffffff</color>
 
+    <item name="gray_holo_dark" type="color">#ff464646</item>
+
+    <item name="gray_holo_light" type="color">#ffd0d0d0</item>
+    <color name="orange_salmon">#EC5745</color>
+    <color name="red_deep">#ea2226</color>
 </resources>

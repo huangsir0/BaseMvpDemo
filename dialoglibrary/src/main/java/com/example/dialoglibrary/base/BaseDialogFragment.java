@@ -1,13 +1,14 @@
 package com.example.dialoglibrary.base;
 
 import android.app.Dialog;
+import android.app.DialogFragment;
 import android.content.DialogInterface;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v4.app.DialogFragment;
+
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -17,6 +18,7 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.example.dialoglibrary.Const;
+import com.example.dialoglibrary.utils.HDialogsManager;
 
 /***
  * 基类
@@ -130,6 +132,12 @@ public abstract class BaseDialogFragment extends DialogFragment {
      */
     protected  int getAnimRes(){return 0;}
 
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        HDialogsManager.getInstance().over();
+    }
 
     /**
      * 默认高

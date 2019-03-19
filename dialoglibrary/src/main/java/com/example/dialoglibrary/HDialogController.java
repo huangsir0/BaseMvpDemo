@@ -1,8 +1,15 @@
 package com.example.dialoglibrary;
 
+
+
+import android.content.Context;
+
+import android.app.FragmentManager;
+import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import java.lang.ref.WeakReference;
 
@@ -89,4 +96,127 @@ public class HDialogController {
     View getDialogView() {
         return dialogView;
     }
+
+
+    /**
+     *
+     * @param view
+     */
+    public void setChildView(View view){
+        this.setDialogView(view);
+        dealDefaultDialog(mPositiveButtonListener, mNegativeButtonListener, titleStr,
+                contentStr, showBtnLeft, negativeStr, showBtnRight, positiveStr);
+
+    }
+
+    /**
+     *
+     * @param mPositiveButtonListener
+     * @param mNegativeButtonListener
+     * @param titleStr
+     * @param contentStr
+     * @param showBtnLeft
+     * @param negativeStr
+     * @param showBtnRight
+     * @param positiveStr
+     */
+    private void dealDefaultDialog(IDialog.OnClickListener mPositiveButtonListener, IDialog.OnClickListener mNegativeButtonListener, String titleStr, String contentStr, boolean showBtnLeft, String negativeStr, boolean showBtnRight, String positiveStr) {
+        if (null==dialogView)return;
+        this.mNegativeButtonListener=mNegativeButtonListener;
+        this.mPositiveButtonListener=mPositiveButtonListener;
+        btn_ok=(Button) dialogView.findViewById(R.id.btn_ok);
+        btn_cancel = (Button) dialogView.findViewById(R.id.btn_cancel);
+        if (btn_ok != null && !TextUtils.isEmpty(positiveStr)) {
+            btn_ok.setVisibility(showBtnRight ? View.VISIBLE : View.GONE);
+            btn_ok.setText(positiveStr);
+            btn_ok.setOnClickListener(mButtonHandler);
+        }
+        if (btn_cancel != null) {
+            btn_cancel.setVisibility(showBtnLeft ? View.VISIBLE : View.GONE);
+            btn_cancel.setText(negativeStr);
+            btn_cancel.setOnClickListener(mButtonHandler);
+        }
+        TextView tv_title = (TextView) dialogView.findViewById(R.id.dialog_title);
+        TextView tv_content = (TextView) dialogView.findViewById(R.id.dialog_content);
+        if (tv_title != null) {
+            tv_title.setVisibility(TextUtils.isEmpty(titleStr) ? View.GONE : View.VISIBLE);
+            tv_title.setText(titleStr);
+        }
+        if (tv_content != null) {
+            tv_content.setVisibility(TextUtils.isEmpty(contentStr) ? View.GONE : View.VISIBLE);
+            tv_content.setText(contentStr);
+        }
+    }
+    private final View.OnClickListener mButtonHandler = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            if (view == btn_cancel) {
+                if (mDialog.get() == null) return;
+                if (mNegativeButtonListener != null) {
+                    mNegativeButtonListener.onClick(mDialog.get());
+                }
+            } else if (view == btn_ok) {
+                if (mDialog.get() == null) return;
+                if (mPositiveButtonListener != null) {
+                    mPositiveButtonListener.onClick(mDialog.get());
+                }
+            }
+        }
+    };
+
+
+    public  static class HParams{
+        FragmentManager fragmentManager;
+        int layoutRes;
+        int dialogWidth;
+        int dialogHeight;
+        float dimAmount = Const.DimAmount;
+        public int gravity = Gravity.CENTER;
+        boolean isCancelableOutside = true;
+        boolean cancelable = false;
+        View dialogView;
+        Context context;
+        IDialog.OnClickListener positiveBtnListener;
+        IDialog.OnClickListener negativeBtnListener;
+        String titleStr;//默认标题
+        String contentStr;//默认内容
+        String positiveStr;//右边按钮文字
+        String negativeStr;//左边按钮文字
+        boolean showBtnLeft, showBtnRight;
+        int animRes;//Dialog动画style
+
+
+        void apply(HDialogController controller){
+            controller.dimAmount=dimAmount;
+            controller.gravity = gravity;
+            controller.isCancelableOutside = isCancelableOutside;
+            controller.cancelable = cancelable;
+            controller.animRes = animRes;
+            controller.titleStr = titleStr;
+            controller.contentStr = contentStr;
+            controller.positiveStr = positiveStr;
+            controller.negativeStr = negativeStr;
+            controller.showBtnLeft = showBtnLeft;
+            controller.showBtnRight = showBtnRight;
+            controller.mPositiveButtonListener = positiveBtnListener;
+            controller.mNegativeButtonListener = negativeBtnListener;
+
+            if (layoutRes > 0) {
+                controller.setLayoutRes(layoutRes);
+            } else if (dialogView != null) {
+                controller.dialogView = dialogView;
+            } else {
+                throw new IllegalArgumentException("Dialog View can't be null");
+            }
+            if (dialogWidth > 0) {
+                controller.dialogWidth = dialogWidth;
+            }
+            if (dialogHeight > 0) {
+                controller.dialogHeight = dialogHeight;
+            }
+        }
+    }
+
+
+
 }

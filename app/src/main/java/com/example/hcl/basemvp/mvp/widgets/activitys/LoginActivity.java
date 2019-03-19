@@ -52,6 +52,8 @@ public class LoginActivity extends BaseAppActivity<LoginPresenter> implements Lo
     @Override
     protected void init() {
         super.init();
+        edit_userName.setText("world");
+        edit_userPsw.setText("123456");
     }
 
     @Override

@@ -190,7 +190,6 @@ public class BallsLoadingView extends View {
 
     private void setupBalls(int w, int h) {
         release();
-
         if (w <= 0 && h <= 0) {
             return;
         }
